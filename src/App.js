@@ -1,3 +1,7 @@
+import {connect} from 'react-redux';
+import {startAction} from './actions/startAction';
+import {stopAction} from './actions/stopAction';
+
 import logo from './logo.svg';
 import './App.css';
 
@@ -22,4 +26,13 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  ...state;
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  startAction: () => dispatch(startAction),
+  stopAction: () => dispatch(stopAction)
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
