@@ -1,15 +1,26 @@
 import {connect} from 'react-redux';
-import {startAction} from './actions/startAction';
-import {stopAction} from './actions/stopAction';
+import {startRotate} from './actions/startAction';
+import {stopRotate} from './actions/stopAction';
 
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+function App({state, startRotate, stopRotate}) {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img 
+          src={logo} 
+          className={
+            "App-logo" + 
+            (state.rotating ? "":" App-logo-paused")
+          } 
+          alt="logo" 
+          onClick={
+            state.rotating ? 
+              stopRotate : startRotate
+          }
+        />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -27,12 +38,12 @@ function App() {
 }
 
 const mapStateToProps = (state) => ({
-  ...state;
+  ...state
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  startAction: () => dispatch(startAction),
-  stopAction: () => dispatch(stopAction)
+  startRotate: () => dispatch(startRotate),
+  stopRotate: () => dispatch(stopRotate)
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
