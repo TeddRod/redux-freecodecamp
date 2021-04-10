@@ -1,4 +1,4 @@
-export default (state, action) => {
+export const rotateReducer = (state, action) => {
   switch (action.type) {
     case "rotate":
       return {

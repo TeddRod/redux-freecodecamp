@@ -1,7 +1,10 @@
 import { createStore } from "redux";
-import rotateReducer from "./reducers/rotateReducer";
+import {rotateReducer} from "./reducers/rotateReducer";
 
-function configureStore(state = { rotating: true }) {
+function configureStore(state = { 
+  rotating: true,
+  user: "toto"
+ }) {
   return createStore(rotateReducer,state);
 }
 
