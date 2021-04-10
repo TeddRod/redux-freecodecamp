@@ -1,12 +1,10 @@
-const rotateReducer = (state, action) => {
+export default (state, action) => {
   switch (action.type) {
     case "rotate":
-    return {
-      rotating: action.payload
-    };
+      return {
+        rotating: action.payload
+      };
     default:
-    return state;
+      return state;
   }
 };
-
-export default rotateReducer;
