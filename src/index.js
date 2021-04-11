@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 // new imports start
 import { Provider } from "react-redux";
 
-import configureStore from "./store";
+import store from "./store";
 // new imports stop
 
 import './index.css';
@@ -12,7 +12,7 @@ import App from './App';
 
 // changed the render
 ReactDOM.render(
-  <Provider store={configureStore()}>
+  <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('root')

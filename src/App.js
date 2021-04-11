@@ -6,8 +6,6 @@ import './App.css';
 
 const App = (props) => {
   
-  console.log(props)
-
   const {rotating, rotateAction} = props;
   
   return (
